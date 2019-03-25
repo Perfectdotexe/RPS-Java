@@ -21,7 +21,6 @@ public class ProgramRPS // Class head
             final int ROCK = 1, PAPER = 2, SCISSORS = 3; // Rock is 1, Paper is 2, and Scissors is 3.
             int counterBot = 0; // Scoring System for Bot
             int counterHuman = 0; // Scoring system for Human
-            int intro = 0; // Skips intro if seen
             Random generate = new Random(); // Generate random value for computers move.
 
             // === *** Beginning of game *** ===
@@ -30,11 +29,11 @@ public class ProgramRPS // Class head
             System.out.println("Would you like to play a game of RPS? Yes or No?");
             question = keyboard.nextLine(); // User input of Yes or No
             
-            if ("No".equals(question) || "no".equals(question)) {
-            System.out.println("Are you chicken McFly?"); // Response to No "Are you chicken McFly?"
-            System.exit(0); // Afterwards, exit javascript.
+		      if ("no".equalsIgnoreCase(question)) {
+            System.out.println("Are you chicken McFly?");
+            System.exit(0);
             } else {
-            System.out.flush(); // Push stream of data, guarantees that it gets out to the file.
+            System.out.flush();
             }
             
             do{
@@ -103,4 +102,4 @@ public class ProgramRPS // Class head
             System.out.println("You have won!"); // Notify user of win.
                  }
                }
-            }
+             }
