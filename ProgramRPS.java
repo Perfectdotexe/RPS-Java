@@ -99,14 +99,13 @@ public class ProgramRPS // Class head
                    }
         while (counterHuman <= 2 && counterHuman >= -2 && counterBot <= 2 && counterBot >= -2 ); //Leave loop if bot or human reach above 2 or one loses 
         if (counterHuman > counterBot ){
-            // YEAH FUCK THE BOTS
             System.out.println("You have won!"); // Notify user of win.
         }
         else if (counterHuman < counterBot){
             // Bot wins!
         }
         else{
-            // They probably tied
+            // Tie
                   }
                }
              }
