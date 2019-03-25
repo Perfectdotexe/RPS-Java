@@ -29,7 +29,7 @@ public class ProgramRPS // Class head
             System.out.println("Would you like to play a game of RPS? Yes or No?");
             question = keyboard.nextLine(); // User input of Yes or No
             
-		      if ("no".equalsIgnoreCase(question)) {
+            if ("no".equalsIgnoreCase(question)) {
             System.out.println("Are you chicken McFly?");
             System.exit(0);
             } else {
