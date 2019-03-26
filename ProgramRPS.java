@@ -16,6 +16,7 @@ public class ProgramRPS // Class head
             Scanner keyboard = new Scanner(System.in); // Creates a Scanner object for keyboard input.
 
             // === *** Strings/Variables needed for the program to function *** ===
+            
             String humanStrat; // Consists of Rock, Paper, Scissors for human to choose from.
             String question; // Question to ask to play game.
             final int ROCK = 1, PAPER = 2, SCISSORS = 3; // Rock is 1, Paper is 2, and Scissors is 3.
@@ -29,11 +30,11 @@ public class ProgramRPS // Class head
             System.out.println("Would you like to play a game of RPS? Yes or No?");
             question = keyboard.nextLine(); // User input of Yes or No
             
-            if ("no".equalsIgnoreCase(question)) {
+            if ("no".equalsIgnoreCase(question)) { // Ignores case of characters.
             System.out.println("Are you chicken McFly?");
-            System.exit(0);
+            System.exit(0); // Quits the game.
             } else {
-            System.out.flush();
+            System.out.flush(); // Clears messages.
             }
             
             do {
@@ -49,7 +50,7 @@ public class ProgramRPS // Class head
                         System.out.println("The Bot has chosen Rock!\nYou have chosen: " + humanStrat);
                         if (humanStrat.equals("paper")) // If Paper is true and Bot chooses Rock then display win.
                         {
-                              counterHuman++; // Increment counter by one.
+                              counterHuman++; // Increment counter by one for Human.
                               System.out.println("Winner, winner, chicken dinner!\nThe score for you is now: " + counterHuman); // Notify user of win.
                         }
                         else if (humanStrat.equals("rock"))
@@ -57,16 +58,16 @@ public class ProgramRPS // Class head
                               System.out.println("Colligationem!"); // Notify user of tie.
                         }
                         else {
-                              counterBot++; // Increment counter by one.
+                              counterBot++; // Increment counter by one for Bot.
                               System.out.println("The Bot wins this round.\nThe score is for the computer is now: " + counterBot);
                         }
-                        break;
+                        break; // Loop termination.
       
                     case 2: //If = 2 then print (Paper)
                         System.out.println("The Bot has chosen Paper!\nYou have chosen: " + humanStrat);
                         if (humanStrat.equals("scissors")) // If Scissors is true and Bot chooses Paper then display win.
                         {
-                              counterHuman++; // Increment counter by one.
+                              counterHuman++; // Increment counter by one for Human.
                               System.out.println("Winner, winner, chicken dinner!\nThe score for you is now: " + counterHuman); // Notify user of win.
                         }
                         else if (humanStrat.equals("paper"))
@@ -74,16 +75,16 @@ public class ProgramRPS // Class head
                               System.out.println("Colligationem!"); // Notify user of tie.
                         }
                         else {
-                              counterBot++; // Increment counter by one.
+                              counterBot++; // Increment counter by one for Bot.
                               System.out.println("The Bot wins this round.\nThe score is for the computer is now: " + counterBot);
                         }
-                        break;
+                        break; // Loop termination.
       
                     case 3: //If = 3 then print (Scissors)
                         System.out.println("The Bot has chosen Scissors!\nYou have chosen: " + humanStrat);
                         if (humanStrat.equals("rock")) // If Rock is true and Bot chooses Paper then display win.
                         {
-                              counterHuman++; // Increment counter by one.
+                              counterHuman++; // Increment counter by one for Human.
                               System.out.println("Winner, winner, chicken dinner!\nThe score for you is now: " + counterHuman); // Notify user of win.
                         }
                         else if (humanStrat.equals("scissors"))
@@ -91,17 +92,17 @@ public class ProgramRPS // Class head
                               System.out.println("Colligationem!"); // Notify user of tie.
                         }
                         else {
-                              counterBot++; // Increment counter by one.
+                              counterBot++; // Increment counter by one for Bot.
                               System.out.println("The Bot wins this round.\nThe score is for the computer is now: " + counterBot);
                         }
-                        break;
+                        break; // Loop termination.
                        }
                    }
         while (counterHuman <= 2 && counterHuman >= -2 && counterBot <= 2 && counterBot >= -2 ); //Leave loop if bot or human reach above 2 or one loses 
-        if (counterHuman > counterBot ){
+        if (counterHuman > counterBot ){ // If Human integer is greater than Bot.
             System.out.println("You have won!"); // Notify user of win.
         }
-        else if (counterHuman < counterBot){
+        else if (counterHuman < counterBot){ // If Bot integer is greater than Human.
             System.out.println("You have lost!"); // Notify user of loss.
                   }
                }
