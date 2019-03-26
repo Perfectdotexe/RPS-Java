@@ -15,7 +15,7 @@ public class ProgramRPS // Class head
          
             Scanner keyboard = new Scanner(System.in); // Creates a Scanner object for keyboard input.
 
-            // === *** Strings/Variables needed for the program to function *** ===
+            // === *** Strings/Variables/Integers needed for the program to function *** ===
             
             String humanStrat; // Consists of Rock, Paper, Scissors for human to choose from.
             String question; // Question to ask to play game.
@@ -98,7 +98,7 @@ public class ProgramRPS // Class head
                         break; // Loop termination.
                        }
                    }
-        while (counterHuman <= 2 && counterHuman >= -2 && counterBot <= 2 && counterBot >= -2 ); //Leave loop if bot or human reach above 2 or one loses 
+        while (counterHuman <= 2 && counterBot <= 2); //Leave loop if bot or human reach above 2 or one loses 
         if (counterHuman > counterBot ){ // If Human integer is greater than Bot.
             System.out.println("You have won!"); // Notify user of win.
         }
