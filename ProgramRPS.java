@@ -1,4 +1,4 @@
-      // Rock, paper scissors game
+      // Rock, Paper, or Scissors game
       //*@Perfect.exe
       //*https://github.com/Perfectdotexe
       //*Cybersecurity student
