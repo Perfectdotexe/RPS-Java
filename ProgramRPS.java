@@ -102,10 +102,7 @@ public class ProgramRPS // Class head
             System.out.println("You have won!"); // Notify user of win.
         }
         else if (counterHuman < counterBot){
-            // Bot wins!
-        }
-        else{
-            // Tie
+            System.out.println("You have lost!"); // Notify user of loss.
                   }
                }
-             }
+            }
