@@ -15,17 +15,21 @@ public class ProgramRPS // Class head
          {
          
             Scanner keyboard = new Scanner(System.in); // Creates a Scanner object for keyboard input.
+            
+            Random rand = new Random(); // Generate random value for computers move.
 
             // === *** Strings/Variables needed for the program to function *** ===
             
             String humanStrat; // Consists of Rock, Paper, Scissors for human to choose from.
             String question; // Question to ask to play game.
-            final int ROCK = 1, PAPER = 2, SCISSORS = 3; // Rock is 1, Paper is 2, and Scissors is 3.
+            int ROCK = 1;
+            int PAPER = 2;
+            int SCISSORS = 3;
             int counterBot = 0; // Scoring System for Bot
             int counterHuman = 0; // Scoring system for Human
+            int rando = rand.nextInt(3);
+            String str1 = Integer.toString(rando);
             
-            Random generate = new Random(); // Generate random value for computers move.
-
             // === *** Beginning of game *** ===
 
             // Greets player
@@ -53,9 +57,8 @@ public class ProgramRPS // Class head
             humanStrat = keyboard.nextLine().toLowerCase(); // User input of RPS
 
                   // Simple line to generate moves.
-                  int computerStrat = (int)(Math.random() * 3) + 1; // Randomly generates value for computer choice of RPS. 3 is max 1 is minimum.
       
-                  switch(computerStrat) { // Calls to value from computerStrat variable.
+                  switch(rando) { // Calls to value from computerStrat variable.
                     case 1: //If = 1 then print (Rock)
                         System.out.println("The Bot has chosen Rock!\nYou have chosen: " + humanStrat);
                         if (humanStrat.equals("paper")) // If Paper is true and Bot chooses Rock then display win.
