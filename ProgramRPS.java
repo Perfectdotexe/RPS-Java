@@ -1,5 +1,6 @@
       // Rock, Paper, or Scissors game
       //*@Perfect.exe
+      //*Austin Tapia
       //*https://github.com/Perfectdotexe
       //*Cybersecurity student
 
@@ -15,25 +16,34 @@ public class ProgramRPS // Class head
          
             Scanner keyboard = new Scanner(System.in); // Creates a Scanner object for keyboard input.
 
-            // === *** Strings/Variables/Integers needed for the program to function *** ===
+            // === *** Strings/Variables needed for the program to function *** ===
             
             String humanStrat; // Consists of Rock, Paper, Scissors for human to choose from.
             String question; // Question to ask to play game.
             final int ROCK = 1, PAPER = 2, SCISSORS = 3; // Rock is 1, Paper is 2, and Scissors is 3.
             int counterBot = 0; // Scoring System for Bot
             int counterHuman = 0; // Scoring system for Human
+            
             Random generate = new Random(); // Generate random value for computers move.
 
             // === *** Beginning of game *** ===
 
             // Greets player
             System.out.println("Would you like to play a game of RPS? Yes or No?");
+            System.out.println("Instructions: Paper beats Rock, Scissors beats Paper, and Rock beats Scissors. If you want to quit input \"q\" at anytime.");
             question = keyboard.nextLine(); // User input of Yes or No
             
             if ("no".equalsIgnoreCase(question)) { // Ignores case of characters.
             System.out.println("Are you chicken McFly?");
             System.exit(0); // Quits the game.
-            } else {
+            }
+            else if ("q".equalsIgnoreCase(question))
+            {
+            System.out.println("You have quit the game!");
+            System.exit(0); // Quits the game.
+            }
+            else 
+            {
             System.out.flush(); // Clears messages.
             }
             
@@ -43,7 +53,7 @@ public class ProgramRPS // Class head
             humanStrat = keyboard.nextLine().toLowerCase(); // User input of RPS
 
                   // Simple line to generate moves.
-                  int computerStrat = generate.nextInt((3 - 1) + 1) + 1; // Randomly generates value for computer choice of RPS. 3 is max 1 is minimum.
+                  int computerStrat = (int)(Math.random() * 3) + 1; // Randomly generates value for computer choice of RPS. 3 is max 1 is minimum.
       
                   switch(computerStrat) { // Calls to value from computerStrat variable.
                     case 1: //If = 1 then print (Rock)
@@ -55,7 +65,12 @@ public class ProgramRPS // Class head
                         }
                         else if (humanStrat.equals("rock"))
                         {
-                              System.out.println("Colligationem!"); // Notify user of tie.
+                              System.out.println("Tie!"); // Notify user of tie.
+                        }
+                        else if (humanStrat.equals("q"))
+                        {
+                           System.out.println("You have quit the game!");
+                           System.exit(0); // Quits the game.
                         }
                         else {
                               counterBot++; // Increment counter by one for Bot.
@@ -72,7 +87,12 @@ public class ProgramRPS // Class head
                         }
                         else if (humanStrat.equals("paper"))
                         {
-                              System.out.println("Colligationem!"); // Notify user of tie.
+                              System.out.println("Tie!"); // Notify user of tie.
+                        }
+                        else if (humanStrat.equals("q")) // Quits the game.
+                        {
+                           System.out.println("You have quit the game!");
+                           System.exit(0);
                         }
                         else {
                               counterBot++; // Increment counter by one for Bot.
@@ -89,7 +109,12 @@ public class ProgramRPS // Class head
                         }
                         else if (humanStrat.equals("scissors"))
                         {
-                              System.out.println("Colligationem!"); // Notify user of tie.
+                              System.out.println("Tie!"); // Notify user of tie.
+                        }
+                        else if (humanStrat.equals("q"))
+                        {
+                           System.out.println("You have quit the game!");
+                           System.exit(0); // Quits the game.
                         }
                         else {
                               counterBot++; // Increment counter by one for Bot.
@@ -98,7 +123,7 @@ public class ProgramRPS // Class head
                         break; // Loop termination.
                        }
                    }
-        while (counterHuman <= 2 && counterBot <= 2); //Leave loop if bot or human reach above 2 or one loses 
+        while (counterHuman <= 2 && counterHuman >= -2 && counterBot <= 2 && counterBot >= -2 ); //Leave loop if bot or human reach above 2 or one loses 
         if (counterHuman > counterBot ){ // If Human integer is greater than Bot.
             System.out.println("You have won!"); // Notify user of win.
         }
