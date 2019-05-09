@@ -154,7 +154,7 @@ public class ProgramRPS // Class head
                         break; // Loop termination.
                        }
                    }
-        while (counterHuman <= 2 && counterHuman >= -2 && counterBot <= 2 && counterBot >= -2 ); //Leave loop if bot or human reach above 2 or one loses 
+        while (counterHuman <= 2 && counterHuman >= -2 && counterBot <= 2 && counterBot >= -2 ); // Leave loop if bot or human reach above 2 or one loses
         if (counterHuman > counterBot ){ // If Human integer is greater than Bot.
             System.out.println("Winner, winner, chicken dinner!"); // Notify user of win.
             System.out.println("     MM      ");
