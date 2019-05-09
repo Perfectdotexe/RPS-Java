@@ -46,7 +46,7 @@ public class ProgramRPS // Class head
             System.out.println(" |    |   \\|    |    /        \\");
             System.out.println(" |____|_  /|____|   /_______  /");
             System.out.println("        \\/                  \\/ ");
-            System.out.println("    Designed by: Perfect.exe\n");
+            System.out.println("    Programmed by: Perfect.exe\n");
             System.out.println("Would you like to play a game of RPS? Yes or No?");
             System.out.println("Instructions: Paper beats Rock, Scissors beats Paper, and Rock beats Scissors. If you want to quit input \"q\" at anytime.");
             question = keyboard.nextLine(); // User input of Yes or No
