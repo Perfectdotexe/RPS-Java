@@ -2,11 +2,13 @@
       //*@Perfect.exe
       //*Austin Tapia
       //*https://github.com/Perfectdotexe
+      //*Website: https://ewhitehat.com/
       //*Cybersecurity student
 
 // Important Java utilities necessary for program to function.
 import java.util.Scanner; // Open scanner library
 import java.util.Random; // Open random library
+import javax.swing.*; // Imports entire javax.swing GUI library
 
 //Define object
 public class ProgramRPS // Class head
@@ -17,22 +19,34 @@ public class ProgramRPS // Class head
             Scanner keyboard = new Scanner(System.in); // Creates a Scanner object for keyboard input.
             
             Random rand = new Random(); // Generate random value for computers move.
-
+            
+            // === *** Graphical User Interface *** ===
+            
+            JFrame winrar = new JFrame(); // Winner GUI popup declaration
+            winrar.setSize(800, 700); // Size of the window (Width by height)
+            winrar.add(new JLabel(new ImageIcon("chicken.gif"))); // Adds image to window (Credit: https://giphy.com/stickers/chicken-dance-SRdLmS9EcaW1G)
+            winrar.setTitle("Winner!"); // Title of window
+            winrar.setLocationRelativeTo(null); // Center window
+            winrar.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // By exiting the window, it closes the program.
+            
             // === *** Strings/Variables needed for the program to function *** ===
             
-            String humanStrat; // Consists of Rock, Paper, Scissors for human to choose from.
-            String question; // Question to ask to play game.
-            int ROCK = 1;
-            int PAPER = 2;
-            int SCISSORS = 3;
-            int counterBot = 0; // Scoring System for Bot
-            int counterHuman = 0; // Scoring system for Human
-            int rando = rand.nextInt(3);
-            String str1 = Integer.toString(rando);
+            String humanStrat, robotStrat = "", question; // Declares Rock, Paper, Scissors string for the human to make their choice, Robot strategy declaration and initialization, and declares the question string. 
+            final String ROCK = "ROCK";
+            final String PAPER = "PAPER";
+            final String SCISSORS = "SCISSORS";
+            int counterBot = 0, counterHuman = 0; // Scoring System
             
             // === *** Beginning of game *** ===
 
             // Greets player
+            System.out.println("____________________  _________");
+            System.out.println("\\______   \\______   \\/   _____/");
+            System.out.println(" |       _/|     ___/\\_____  \\");
+            System.out.println(" |    |   \\|    |    /        \\");
+            System.out.println(" |____|_  /|____|   /_______  /");
+            System.out.println("        \\/                  \\/ ");
+            System.out.println("    Designed by: Perfect.exe\n");
             System.out.println("Would you like to play a game of RPS? Yes or No?");
             System.out.println("Instructions: Paper beats Rock, Scissors beats Paper, and Rock beats Scissors. If you want to quit input \"q\" at anytime.");
             question = keyboard.nextLine(); // User input of Yes or No
@@ -55,16 +69,30 @@ public class ProgramRPS // Class head
             // Asks player RPS (Loop)
             System.out.println("Rock, Paper, or Scissors?");
             humanStrat = keyboard.nextLine().toLowerCase(); // User input of RPS
-
+            
+            int rando = rand.nextInt(3); // Generates a random integer and case switch below utilizes it.
+                  switch (rando)
+                  {
+                  case 0: //If nextInt = 0 then it will set the robotStrat string to Rock.
+                     robotStrat = ROCK;
+                        break;
+                  case 1:
+                     robotStrat = PAPER; //If nextInt = 1 then it will set the robotStrat string to Paper.
+                        break;
+                  case 2:
+                     robotStrat = SCISSORS; //If nextInt = 3 then it will set the robotStrat string to Scissors.
+                        break;
+                  }
+                  
                   // Simple line to generate moves.
       
-                  switch(rando) { // Calls to value from computerStrat variable.
-                    case 1: //If = 1 then print (Rock)
+                  switch(robotStrat) { // Calls to value from computerStrat variable.
+                    case "ROCK": //If = 1 then print (Rock)
                         System.out.println("The Bot has chosen Rock!\nYou have chosen: " + humanStrat);
                         if (humanStrat.equals("paper")) // If Paper is true and Bot chooses Rock then display win.
                         {
                               counterHuman++; // Increment counter by one for Human.
-                              System.out.println("Winner, winner, chicken dinner!\nThe score for you is now: " + counterHuman); // Notify user of win.
+                              System.out.println("The score for you is now: " + counterHuman); // Notify user of win.
                         }
                         else if (humanStrat.equals("rock"))
                         {
@@ -81,12 +109,12 @@ public class ProgramRPS // Class head
                         }
                         break; // Loop termination.
       
-                    case 2: //If = 2 then print (Paper)
+                    case "PAPER": //If = 2 then print (Paper)
                         System.out.println("The Bot has chosen Paper!\nYou have chosen: " + humanStrat);
                         if (humanStrat.equals("scissors")) // If Scissors is true and Bot chooses Paper then display win.
                         {
                               counterHuman++; // Increment counter by one for Human.
-                              System.out.println("Winner, winner, chicken dinner!\nThe score for you is now: " + counterHuman); // Notify user of win.
+                              System.out.println("The score for you is now: " + counterHuman); // Notify user of win.
                         }
                         else if (humanStrat.equals("paper"))
                         {
@@ -103,12 +131,12 @@ public class ProgramRPS // Class head
                         }
                         break; // Loop termination.
       
-                    case 3: //If = 3 then print (Scissors)
+                    case "SCISSORS": //If = 3 then print (Scissors)
                         System.out.println("The Bot has chosen Scissors!\nYou have chosen: " + humanStrat);
                         if (humanStrat.equals("rock")) // If Rock is true and Bot chooses Paper then display win.
                         {
                               counterHuman++; // Increment counter by one for Human.
-                              System.out.println("Winner, winner, chicken dinner!\nThe score for you is now: " + counterHuman); // Notify user of win.
+                              System.out.println("The score for you is now: " + counterHuman); // Notify user of win.
                         }
                         else if (humanStrat.equals("scissors"))
                         {
@@ -128,10 +156,16 @@ public class ProgramRPS // Class head
                    }
         while (counterHuman <= 2 && counterHuman >= -2 && counterBot <= 2 && counterBot >= -2 ); //Leave loop if bot or human reach above 2 or one loses 
         if (counterHuman > counterBot ){ // If Human integer is greater than Bot.
-            System.out.println("You have won!"); // Notify user of win.
+            System.out.println("Winner, winner, chicken dinner!"); // Notify user of win.
+            System.out.println("     MM      ");
+            System.out.println("    <' \\___/|");
+            System.out.println("  u/  \\_  _/ ");
+            System.out.println("        ][   ");
+            winrar.show();
         }
         else if (counterHuman < counterBot){ // If Bot integer is greater than Human.
             System.out.println("You have lost!"); // Notify user of loss.
+            System.exit(0);
                   }
                }
-            }
+}
