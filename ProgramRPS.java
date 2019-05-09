@@ -71,23 +71,23 @@ public class ProgramRPS // Class head
             humanStrat = keyboard.nextLine().toLowerCase(); // User input of RPS
             
             int rando = rand.nextInt(3); // Generates a random integer and case switch below utilizes it.
-                  switch (rando)
+                  switch (rando) // Calls to rando
                   {
                   case 0: //If nextInt = 0 then it will set the robotStrat string to Rock.
                      robotStrat = ROCK;
-                        break;
+                        break; // Loop termination.
                   case 1:
                      robotStrat = PAPER; //If nextInt = 1 then it will set the robotStrat string to Paper.
-                        break;
+                        break; // Loop termination.
                   case 2:
-                     robotStrat = SCISSORS; //If nextInt = 3 then it will set the robotStrat string to Scissors.
-                        break;
+                     robotStrat = SCISSORS; //If nextInt = 2 then it will set the robotStrat string to Scissors.
+                        break; // Loop termination.
                   }
                   
                   // Simple line to generate moves.
       
                   switch(robotStrat) { // Calls to value from computerStrat variable.
-                    case "ROCK": //If = 1 then print (Rock)
+                    case "ROCK": //If = 0 then print (Rock)
                         System.out.println("The Bot has chosen Rock!\nYou have chosen: " + humanStrat);
                         if (humanStrat.equals("paper")) // If Paper is true and Bot chooses Rock then display win.
                         {
@@ -109,7 +109,7 @@ public class ProgramRPS // Class head
                         }
                         break; // Loop termination.
       
-                    case "PAPER": //If = 2 then print (Paper)
+                    case "PAPER": //If = 1 then print (Paper)
                         System.out.println("The Bot has chosen Paper!\nYou have chosen: " + humanStrat);
                         if (humanStrat.equals("scissors")) // If Scissors is true and Bot chooses Paper then display win.
                         {
@@ -123,7 +123,7 @@ public class ProgramRPS // Class head
                         else if (humanStrat.equals("q")) // Quits the game.
                         {
                            System.out.println("You have quit the game!");
-                           System.exit(0);
+                           System.exit(0); // Quits the game.
                         }
                         else {
                               counterBot++; // Increment counter by one for Bot.
@@ -131,7 +131,7 @@ public class ProgramRPS // Class head
                         }
                         break; // Loop termination.
       
-                    case "SCISSORS": //If = 3 then print (Scissors)
+                    case "SCISSORS": //If = 2 then print (Scissors)
                         System.out.println("The Bot has chosen Scissors!\nYou have chosen: " + humanStrat);
                         if (humanStrat.equals("rock")) // If Rock is true and Bot chooses Paper then display win.
                         {
@@ -161,11 +161,11 @@ public class ProgramRPS // Class head
             System.out.println("    <' \\___/|");
             System.out.println("  u/  \\_  _/ ");
             System.out.println("        ][   ");
-            winrar.show();
+            winrar.show(); // Brings up window
         }
         else if (counterHuman < counterBot){ // If Bot integer is greater than Human.
             System.out.println("You have lost!"); // Notify user of loss.
-            System.exit(0);
+            System.exit(0); // Quits the game.
                   }
                }
 }
