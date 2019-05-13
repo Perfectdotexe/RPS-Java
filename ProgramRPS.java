@@ -1,5 +1,5 @@
       // Rock, Paper, or Scissors game
-      //*@Perfect.exe
+      //*Perfect.exe
       //*Austin Tapia
       //*https://github.com/Perfectdotexe
       //*Website: https://ewhitehat.com/
